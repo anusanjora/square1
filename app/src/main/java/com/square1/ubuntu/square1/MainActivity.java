@@ -1,5 +1,6 @@
 package com.square1.ubuntu.square1;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,7 +13,7 @@ import java.lang.reflect.Type;
 public class MainActivity extends AppCompatActivity {
 
     Button btnSignIn,btnSignUp;
-            TextView txtSlogan;
+    TextView txtSlogan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,14 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View view) {
 
         }
+
     });
-    }
+    btnSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent signIn = new Intent(MainActivity.this,SignIn.class);
+                startActivity(signIn);
+            }
+    });
+}
 }
