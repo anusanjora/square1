@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">square1</string>
     <string name="slogan">Get best food Here</string>
+    <string name="name_login">NAME</string>
+    <string name="password_login">Password</string>
+    <string name="signin_button">SIGN IN </string>
+    <string name="signup_button">SIGN UP</string>
+
+    <string name="hint_name">Enter NAME</string>
+    <string name="pass_hint">Enter Password</string>
 </resources>
+

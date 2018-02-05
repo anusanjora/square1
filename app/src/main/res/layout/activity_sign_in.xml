@@ -1,67 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
     tools:context="com.square1.ubuntu.square1.SignIn">
-<LinearLayout
-    android:orientation="vertical"
-    android:layout_marginLeft="6dp"
-    android:layout_marginRight="6dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/editText"
+            android:layout_marginEnd="142dp"
+            android:layout_marginRight="142dp"
+            android:layout_marginTop="62dp"
+            android:text="@string/name_login"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="40sp" />
+        <EditText
+            android:id="@+id/edtID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/widget_edittext_dark"
+            android:hint="@string/hint_name"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="40sp"/>
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView2"
+            android:layout_toEndOf="@+id/editText"
+            android:layout_toRightOf="@+id/editText"
+            android:text="@string/password_login"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="40sp" />
+        <EditText
+            android:id="@+id/edtPassward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/widget_edittext_dark"
+            android:hint="@string/pass_hint"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="40sp"/>
+
+<Button
+    android:id="@+id/btnSignIn"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_centerInParent="true"
-    >
-    <com.rengwuxian.materialedittext.MaterialEditText
-        android:id="@+id/edtID"
-        android:hint="Roll Number"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:textColorHint="@android:color/white"
-        android:text="1610991106"
-        android:textColor="@android:color/white"
-        android:textSize="35sp"
-        android:inputType="number"
-        app:met_baseColor="@android:color/white"
-        app:met_floatingLabel="highlight"
-        app:met_maxCharacters="10"
-        app:met_primaryColor="@android:color/white"
-        app:met_singleLineEllipsis="true"
-        />
-    <com.rengwuxian.materialedittext.MaterialEditText
-        android:id="@+id/edtName"
-        android:hint="Name"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:textColorHint="@android:color/white"
-        android:text="Aniket"
-        android:textColor="@android:color/white"
-        android:textSize="35sp"
-        android:inputType="textPersonName"
-        app:met_baseColor="@android:color/white"
-        app:met_floatingLabel="highlight"
-        app:met_maxCharacters="10"
-        app:met_primaryColor="@android:color/white"
-        app:met_singleLineEllipsis="true"
-        />
-    <com.rengwuxian.materialedittext.MaterialEditText
-        android:id="@+id/edtPassward"
-        android:hint="Passward"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:textColorHint="@android:color/white"
-        android:text="2345"
-        android:textColor="@android:color/white"
-        android:textSize="35sp"
-        android:inputType="textPassword"
-        app:met_baseColor="@android:color/white"
-        app:met_floatingLabel="highlight"
-        app:met_maxCharacters="10"
-        app:met_primaryColor="@android:color/white"
-        app:met_singleLineEllipsis="true"
-        />
-</LinearLayout>
+    android:layout_marginTop="40dp"
+    android:text="@string/signin_button"/>
+    </LinearLayout>
+
+
 
 </RelativeLayout>
