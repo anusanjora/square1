@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -15,17 +16,20 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.square1.ubuntu.square1.Model.User;
 
+import static com.square1.ubuntu.square1.R.id.edtPassward;
+
 public class SignIn extends AppCompatActivity {
-    EditText edtID,edtPassward;
-    Button btnSignIn;
+    private FirebaseAnalytics mFirebaseAnalytics;
+    EditText edtID,edtPassword;
+    Button btnSignIn = findViewById(R.id.btnSignIn);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-    edtPassward = findViewById(R.id.edtPassward) ;
+    edtPassword = findViewById(edtPassward) ;
     edtID = findViewById(R.id.edtID);
-    btnSignIn = (Button)findViewById(R.id.btnSignIn);
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference table_user = database.getReference("USER");
@@ -40,12 +44,14 @@ public class SignIn extends AppCompatActivity {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     //Check user exist
-                    if(dataSnapshot.child(edtID.getText().toString()).exists());
-                    //get user information
-                    //mDialog.dismiss();
-                    User user=dataSnapshot.child(edtID.getText().toString()).getValue(User.class);
+                    //if(dataSnapshot.child(edtID.getText().toString()).exists());
+                        //get user information
+                        //mDialog.dismiss();
+                        User user = dataSnapshot.child(edtID.getText().toString()).getValue(User.class);
 
-                    if(user.getPassward().equals(edtPassward.getText().toString()))
+
+                    assert user != null;
+                    if(user.getPassward().equals(edtPassword.getText().toString()))
                     {
                         Toast.makeText(SignIn.this,"Sign In succssfull !",Toast.LENGTH_SHORT).show();
                     }
@@ -60,6 +66,7 @@ public class SignIn extends AppCompatActivity {
 //                                .show());
 //                    }
                 }
+
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
 
